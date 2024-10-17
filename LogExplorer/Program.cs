@@ -12,7 +12,9 @@ var validQuery = QueryParser.Validate(queryInput);
 var query = QueryParser.Parse(validQuery);
 
 logSearcher.Validate(logs, query);
-var results = logSearcher.SearchLogs(logs, query);
+
+var expression = QueryParser.CreateContainsExpression(query.ColumnName, query.SearchString);
+var results = logSearcher.SearchLogs(logs, expression);
 
 if (results.Count == 0)
 {
