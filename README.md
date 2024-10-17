@@ -3,16 +3,16 @@ Console application that would parse a log csv file and print out logs based on 
 
 ## TODO
 
-- [ ] search any column by full string or partial string.
-- [ ] Query provided by user input
-- [ ] Format as your choice in example: [column_name = 'search_string']
-- [ ] Results from the query should be combined and returned in JSON format
-- [ ] Please provide project folder structure.
+- [x] search any column by full string or partial string.
+- [x] Query provided by user input
+- [x] Format as your choice in example: [column_name = 'search_string']
+- [x] Results from the query should be combined and returned in JSON format
+- [x] Please provide project folder structure.
 
 ### Bonus: 
 - [ ] Add Boolean logical operator support in the queries (AND, OR, NOT...);
-- [ ] Add multiple file support;
-- [ ] Add log count value in the resulting JSON output;
+- [x] Add multiple file support;
+- [x] Add log count value in the resulting JSON output;
 
 ### More bonus points:
 
