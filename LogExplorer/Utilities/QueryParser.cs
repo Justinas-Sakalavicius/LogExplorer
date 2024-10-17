@@ -9,7 +9,7 @@ public static class QueryParser
     {
         if (string.IsNullOrWhiteSpace(input))
         {
-            throw new ArgumentNullException("Invalid query format.");
+            throw new ArgumentException(ApplicationConstants.InvalidQueryArgumentMessage, nameof(input));
         }
         
         return input;
@@ -22,7 +22,7 @@ public static class QueryParser
 
         if (!match.Success)
         {
-            throw new FormatException("Invalid query format. Use: column_name = 'search_string'");
+            throw new FormatException(ApplicationConstants.InvalidQueryFormatMessage);
         }
 
         var columnName = match.Groups[1].Value;

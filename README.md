@@ -10,7 +10,7 @@ Console application that would parse a log csv file and print out logs based on 
 - [x] Please provide project folder structure.
 
 ### Bonus: 
-- [ ] Add Boolean logical operator support in the queries (AND, OR, NOT...);
+- [ ] Add Boolean logical operator support in the queries (AND, OR, NOT...); (build an expression tree)
 - [x] Add multiple file support;
 - [x] Add log count value in the resulting JSON output;
 
