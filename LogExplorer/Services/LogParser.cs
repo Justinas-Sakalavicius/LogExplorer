@@ -4,9 +4,9 @@ using LogExplorer.Models;
 
 namespace LogExplorer.Services;
 
-public class LogParser
+public static class LogParser
 {
-    public List<LogEntry> ParseFiles(string[] filePaths)
+    public static List<LogEntry> ParseFiles(string[] filePaths)
     {
         var logEntries = new List<LogEntry>();
 
@@ -19,7 +19,7 @@ public class LogParser
         return logEntries;
     }
     
-    private List<LogEntry> ParseFile(string filePath)
+    private static List<LogEntry> ParseFile(string filePath)
     {
         var logEntries = new List<LogEntry>();
         using var reader = new StreamReader(filePath);

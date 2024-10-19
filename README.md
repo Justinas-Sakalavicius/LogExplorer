@@ -10,15 +10,16 @@ Console application that would parse a log csv file and print out logs based on 
 - [x] Please provide project folder structure.
 
 ### Bonus: 
-- [ ] Add Boolean logical operator support in the queries (AND, OR, NOT...); (build an expression tree)
+- [x] Add Boolean logical operator support in the queries (AND, OR);
 - [x] Add multiple file support;
 - [x] Add log count value in the resulting JSON output;
 
 ### More bonus points:
 
-- [ ] Improvements are welcome 😊. For example, Deal with duplicates, combine results in a more readable format.
-- [ ] Implement database layer. Save results in a database of your choice.
-- [ ] Implement options to send alerts based on the severity of the log. No need to actually send the notification, you can use Console.WriteLine().
+- [ ] Deal with duplicates;
+- [ ] Combine results in a more readable format;
+- [ ] Implement database layer. Save results in a database of your choice;
+- [ ] Implement options to send alerts based on the severity of the log. No need to actually send the notification, you can use Console.WriteLine();
 - [ ] Dynamic log parsing. Logs can have different columns, how would you attend to this?
 
 ### JSON Example (Result)

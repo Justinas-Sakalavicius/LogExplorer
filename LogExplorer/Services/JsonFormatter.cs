@@ -3,11 +3,11 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using LogExplorer.Models;
 
-namespace LogExplorer.Utilities;
+namespace LogExplorer.Services;
 
 public static class JsonFormatter
 {
-    public static string FormatToJson(List<LogEntry> results, string searchQuery)
+    public static string FormatToJson(List<LogEntry> results, string? searchQuery)
     {
         var output = new
         {

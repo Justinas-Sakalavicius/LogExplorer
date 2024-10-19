@@ -2,25 +2,14 @@
 using LogExplorer.Utilities;
 
 var filePaths = Directory.GetFiles(ApplicationConstants.FilesPath, ApplicationConstants.SupportedFileExtension);
-var logParser = new LogParser();
-var logSearcher = new LogSearch();
-var logs = logParser.ParseFiles(filePaths);
+var logs = LogParser.ParseFiles(filePaths);
 
 Console.WriteLine("Enter your query:");
 var queryInput = Console.ReadLine();
-var validQuery = QueryParser.Validate(queryInput);
-var query = QueryParser.Parse(validQuery);
 
-logSearcher.Validate(logs, query);
+var parsedQuery = QueryParser.ParseQuery(queryInput); 
+var predicateExpression = ExpressionBuilder.BuildExpression(parsedQuery);
+var results = LogSearch.SearchLogs(logs, predicateExpression);
 
-var expression = QueryParser.CreateContainsExpression(query.ColumnName, query.SearchString);
-var results = logSearcher.SearchLogs(logs, expression);
-
-if (results.Count == 0)
-{
-    Console.WriteLine("No matching records found.");
-    return;
-}
-
-var jsonOutput = JsonFormatter.FormatToJson(results, validQuery);
+var jsonOutput = JsonFormatter.FormatToJson(results, queryInput);
 Console.WriteLine(jsonOutput);
